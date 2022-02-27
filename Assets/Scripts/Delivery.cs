@@ -10,9 +10,14 @@ public class Delivery : MonoBehaviour
     }
 
      void OnTriggerEnter2D(Collider2D other) {
-        if (other.tag == "Package" && !hasPackage){
-            hasPackage = true;    
-            Debug.Log("Got package! HasPackage: " + hasPackage);
+        if (other.tag == "Package"){
+            if(!hasPackage){
+                hasPackage = true;    
+                Debug.Log("Got package! HasPackage: " + hasPackage);
+            }else{
+                Debug.Log("You already have the package. HasPackage: " + hasPackage);
+            }
+
         }
 
         if (other.tag == "Customer"){
