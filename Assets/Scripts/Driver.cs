@@ -12,10 +12,10 @@ public class Driver : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        float turnAmount = Input.GetAxis("Horizontal") * turnSpeed * Time.deltaTime;
-        float moveAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
-        transform.Rotate(0, 0, -turnAmount);
-        transform.Translate(0, moveAmount, 0);
+        float xAmount = Input.GetAxis("Horizontal") * moveSpeed * Time.deltaTime;
+        float yAmount = Input.GetAxis("Vertical") * moveSpeed * Time.deltaTime;
+        transform.Translate(xAmount, 0, 0);
+        transform.Translate(0, yAmount, 0);
 
     }
         void OnCollisionEnter2D(Collision2D other) {
